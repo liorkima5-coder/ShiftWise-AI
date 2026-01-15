@@ -118,8 +118,9 @@ st.markdown("""
 # 2. התחברות ל-Supabase
 # ==========================================
 # ככה מושכים סודות בצורה מאובטחת ב-Streamlit Cloud
-url = st.secrets["https://jnxkieepzwenqzipanew.supabase.co"]
-key = st.secrets["sb_publishable__NSTZNqt12HMdRVavsPQWw_46i7z6zX"]
+# ככה מושכים סודות בצורה מאובטחת ב-Streamlit Cloud
+url = st.secrets["SUPABASE_URL"]
+key = st.secrets["SUPABASE_KEY"]
 if "YOUR" in key:
     st.error("⚠️ נא לעדכן מפתחות Supabase בקוד")
     st.stop()
@@ -413,4 +414,5 @@ with tab4:
             st.plotly_chart(fig2, use_container_width=True)
 
     else:
+
         st.info("אין נתונים. לחץ על הכפתור להפעלה.")
