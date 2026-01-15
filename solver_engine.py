@@ -2,8 +2,9 @@ from ortools.sat.python import cp_model
 from supabase import create_client, Client
 
 # --- עדכן מפתחות כאן ---
-url = st.secrets["https://jnxkieepzwenqzipanew.supabase.co"]
-key = st.secrets["sb_publishable__NSTZNqt12HMdRVavsPQWw_46i7z6zX"]
+# ככה מושכים סודות בצורה מאובטחת ב-Streamlit Cloud
+url = st.secrets["SUPABASE_URL"]
+key = st.secrets["SUPABASE_KEY"]
 supabase: Client = create_client(url, key)
 
 def run_scheduler():
@@ -80,4 +81,5 @@ def run_scheduler():
         return True
     else:
         print("לא נמצא פתרון")
+
         return False
